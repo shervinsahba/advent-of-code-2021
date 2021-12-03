@@ -1,6 +1,6 @@
 import numpy as np
 
-with open('day02-input') as f:
+with open('input/day02') as f:
     directions = list(filter(None, f.read().split()))
 
 vectors = dict(zip(['forward', 'up', 'down'], map(np.array, [[1, 1, 0], [0, 0, -1], [0, 0, 1]])))

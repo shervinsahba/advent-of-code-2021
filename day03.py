@@ -13,7 +13,7 @@ def part2(data, p):
 
 
 if __name__ == '__main__':
-    with open('day03-input') as f:
+    with open('input/day03') as f:
         data = [[bit for bit in bits] for bits in list(f.read().split())]
 
     print('power:', part1(data, 0) * part1(data, -1))
