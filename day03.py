@@ -14,14 +14,7 @@ def part2(data, p):
 
 if __name__ == '__main__':
     with open('day03-input') as f:
-        data = list(f.read().split())
+        data = [[bit for bit in bits] for bits in list(f.read().split())]
 
-    data = [[bit for bit in bits] for bits in data]
-
-    gamma = part1(data, 0)
-    epsilon = part1(data, -1)
-    print('power:', gamma * epsilon)
-
-    oxygen = part2(data, 0)
-    scrubber = part2(data, -1)
-    print('life support:', oxygen * scrubber)
+    print('power:', part1(data, 0) * part1(data, -1))
+    print('life support:', part2(data, 0) * part2(data, -1))
