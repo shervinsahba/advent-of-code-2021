@@ -2,8 +2,8 @@ import numpy as np
 
 
 def bingo(boards, calls):
-    winners, scores = [], []
     boards_ = np.copy(boards)
+    winners, scores = [], []
     for call in calls:
         for n, board in enumerate(boards_):
             if n not in winners and call in board:
@@ -21,8 +21,6 @@ if __name__ == '__main__':
 
     calls = np.array(calls.split(','), int)
     boards = np.loadtxt(boards, int).reshape(-1, 5, 5)
-
     results = bingo(boards, calls)
 
-    print('bingo:', results[0])
-    print('bongo:', results[-1])
+    print(results[0], results[-1])
