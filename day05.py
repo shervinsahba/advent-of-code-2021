@@ -13,8 +13,8 @@ def chart(data, diagonals=True):
         elif y1 == y2:
             grid[y1, min(x1,x2):max(x1,x2)+1] += 1
         elif diagonals:
-            for x,y in zip(range(x1,x2+1) if x2>x1 else reversed(range(x2,x1+1)),
-                        range(y1,y2+1) if y2>y1 else reversed(range(y2,y1+1))):
+            for x,y in  zip(range(x1,x2+1) if x2>x1 else range(x2,x1+1)[::-1],
+                            range(y1,y2+1) if y2>y1 else range(y2,y1+1)[::-1]):
                 grid[y, x] += 1
     return grid
 
