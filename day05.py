@@ -18,7 +18,7 @@ def chart(data, diagonals=True):
                 grid[y, x] += 1
     return grid
 
-answer = lambda x: print(np.bincount(x.flatten())[2:].sum())
+answer = lambda x: np.count_nonzero(x >= 2)
 
-answer(chart(data, diagonals=False))
-answer(chart(data, diagonals=True))
+print(answer(chart(data, diagonals=False)), 
+      answer(chart(data, diagonals=True)))
