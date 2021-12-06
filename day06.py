@@ -5,10 +5,9 @@ data = [data.count(timer) for timer in range(9)]
 
 total = []
 for _ in range(256):    
-    spawning = data[0]
-    data.append(spawning)
+    data.append(data[0])
     data = [x for x in data[1:]]
-    data[6] += spawning
+    data[6] += data[-1]
 
     total.append(sum(data))
    
